@@ -20,6 +20,13 @@ defmodule DeliveryLiveWeb.Router do
     get "/", PageController, :index
 
     live "/restaurant", RestaurantLive
+
+    live "/admin/restaurants", RestaurantLive.Index, :index
+    live "/admin/restaurants/new", RestaurantLive.Index, :new
+    live "/admin/restaurants/:id/edit", RestaurantLive.Index, :edit
+
+    live "/admin/restaurants/:id", RestaurantLive.Show, :show
+    live "/admin/restaurants/:id/show/edit", RestaurantLive.Show, :edit
   end
 
   # Other scopes may use custom stacks.
