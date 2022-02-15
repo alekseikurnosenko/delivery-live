@@ -122,3 +122,25 @@
   100% { opacity: 0; }
 }
 
+@font-face{
+  font-family:'DD-TTNorms';
+  font-style:normal;
+  font-weight:400;
+  src: url('https://typography.doordash.com/TTNorms-Regular.woff2') format('woff2'), url('https://typography.doordash.com/TTNorms-Regular.woff') format('woff'), url('https://typography.doordash.com/TTNorms-Regular.ttf') format('truetype'), url('https://typography.doordash.com/TTNorms-Regular.eot?#iefix') format('embedded-opentype');
+}
+  
+@font-face{
+  font-family:'DD-TTNorms';font-style:normal;font-weight:500;src: url('https://typography.doordash.com/TTNorms-Medium.woff2') format('woff2'), url('https://typography.doordash.com/TTNorms-Medium.woff') format('woff'), url('https://typography.doordash.com/TTNorms-Medium.ttf') format('truetype'), url('https://typography.doordash.com/TTNorms-Medium.eot?#iefix') format('embedded-opentype');
+} 
+
+@font-face{
+  font-family:'DD-TTNorms';font-style:normal;font-weight:700;src: url('https://typography.doordash.com/TTNorms-Bold.woff2') format('woff2'), url('https://typography.doordash.com/TTNorms-Bold.woff') format('woff'), url('https://typography.doordash.com/TTNorms-Bold.ttf') format('truetype'), url('https://typography.doordash.com/TTNorms-Bold.eot?#iefix') format('embedded-opentype');
+} 
+
+@font-face{
+  font-family:'DD-TTNorms';font-style:normal;font-weight:800;src: url('https://typography.doordash.com/TTNorms-ExtraBold.woff2') format('woff2'), url('https://typography.doordash.com/TTNorms-ExtraBold.woff') format('woff'), url('https://typography.doordash.com/TTNorms-ExtraBold.ttf') format('truetype'), url('https://typography.doordash.com/TTNorms-ExtraBold.eot?#iefix') format('embedded-opentype');
+} 
+
+@font-face{
+  font-family:'DD-SourceSerifPro';font-style:normal;font-weight:800;src: url('https://typography.doordash.com/SourceSerifPro-Regular.woff2') format('woff2'), url('https://typography.doordash.com/SourceSerifPro-Regular.woff') format('woff'), url('https://typography.doordash.com/SourceSerifPro-Regular.ttf') format('truetype'), url('https://typography.doordash.com/SourceSerifPro-Regular.eot?#iefix') format('embedded-opentype');
+} 

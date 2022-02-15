@@ -7,7 +7,15 @@ module.exports = {
     '../lib/*_web/**/*.*ex'
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      'sans': ['DD-TTNorms']
+    },
+    colors: {
+      grey: 'rgb(118, 118, 118)',
+      divider: 'rgb(231, 231, 231)'
+    },
+    extend: {    
+    },
   },
   plugins: [
     require('@tailwindcss/forms')
