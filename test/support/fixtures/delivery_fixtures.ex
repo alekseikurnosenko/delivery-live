@@ -19,4 +19,20 @@ defmodule DeliveryLive.DeliveryFixtures do
 
     restaurant
   end
+
+  @doc """
+  Generate a item.
+  """
+  def item_fixture(attrs \\ %{}) do
+    {:ok, item} =
+      attrs
+      |> Enum.into(%{
+        calories: 42,
+        name: "some name",
+        price: 42
+      })
+      |> DeliveryLive.Delivery.create_item()
+
+    item
+  end
 end

@@ -27,6 +27,11 @@ defmodule DeliveryLiveWeb.Router do
 
     live "/admin/restaurants/:id", RestaurantLive.Show, :show
     live "/admin/restaurants/:id/show/edit", RestaurantLive.Show, :edit
+    live "/admin/restaurants/:id/items/new", RestaurantLive.Show, :new_item
+    live "/admin/restaurants/:id/items/:item_id/edit", RestaurantLive.Show, :edit_item
+
+    live "/admin/restaurants/:id/items/:item_id", ItemLive.Show, :show
+    live "/admin/restaurants/:id/items/:item_id/show/edit", ItemLive.Show, :edit_item
   end
 
   # Other scopes may use custom stacks.

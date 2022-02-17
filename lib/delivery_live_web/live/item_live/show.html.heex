@@ -1,0 +1,37 @@
+<h1>Show Item</h1>
+
+<%= if @live_action in [:edit_item] do %>
+  <.modal return_to={Routes.item_show_path(@socket, :show, @restaurant_id, @item)}>
+    <.live_component
+      module={DeliveryLiveWeb.ItemLive.FormComponent}
+      id={@item.id || :new}
+      title={@page_title}
+      action={@live_action}
+      item={@item}
+      restaurant_id={@restaurant_id}
+      return_to={Routes.item_show_path(@socket, :show, @restaurant_id, @item)}
+    />
+  </.modal>
+<% end %>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @item.name %>
+  </li>
+
+  <li>
+    <strong>Price:</strong>
+    <%= @item.price %>
+  </li>
+
+  <li>
+    <strong>Calories:</strong>
+    <%= @item.calories %>
+  </li>
+
+</ul>
+
+<span><%= live_patch "Edit", to: Routes.item_show_path(@socket, :edit_item, @restaurant_id, @item), class: "button" %></span> |
+<span><%= live_redirect "Back", to: Routes.restaurant_show_path(@socket, :show, @restaurant_id) %></span>

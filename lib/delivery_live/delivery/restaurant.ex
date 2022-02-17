@@ -6,6 +6,7 @@ defmodule DeliveryLive.Delivery.Restaurant do
     field :address, :string
     field :name, :string
     field :price_range, :integer
+    has_many :items, DeliveryLive.Delivery.Item
 
     timestamps()
   end

@@ -13,6 +13,20 @@
   </.modal>
 <% end %>
 
+<%= if @live_action in [:new_item, :edit_item] do %>
+  <.modal return_to={Routes.restaurant_show_path(@socket, :show, @restaurant)}>
+    <.live_component
+      module={DeliveryLiveWeb.ItemLive.FormComponent}
+      id={@item.id || :new}
+      title={@page_title}
+      action={@live_action}
+      item={@item}
+      restaurant_id={@restaurant.id}
+      return_to={Routes.restaurant_show_path(@socket, :show, @restaurant)}
+    />
+  </.modal>
+<% end %>
+
 <ul>
 
   <li>
@@ -31,6 +45,39 @@
   </li>
 
 </ul>
+
+<div class="border border-black">
+  <h2>Items</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Calories</th>
+
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="items">
+      <%= for item <- @restaurant.items do %>
+        <tr id={"item-#{item.id}"}>
+          <td><%= item.name %></td>
+          <td><%= item.price %></td>
+          <td><%= item.calories %></td>
+
+          <td>
+            <span><%= live_redirect "Show", to: Routes.item_show_path(@socket, :show, @restaurant, item) %></span>
+            <span><%= live_patch "Edit", to: Routes.restaurant_show_path(@socket, :edit_item, @restaurant.id, item) %></span>
+            <span><%= link "Delete", to: "#", phx_click: "delete_item", phx_value_item_id: item.id, data: [confirm: "Are you sure?"] %></span>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <span><%= live_patch "New Item", to: Routes.restaurant_show_path(@socket, :new_item, @restaurant.id) %></span>
+</div>
+
 
 <span><%= live_patch "Edit", to: Routes.restaurant_show_path(@socket, :edit, @restaurant), class: "button" %></span> |
 <span><%= live_redirect "Back", to: Routes.restaurant_index_path(@socket, :index) %></span>
